@@ -1,0 +1,12 @@
+{
+  "name": "maishufang",
+  "private": true,
+  "version": "0.1.0",
+  "description": "麦书房网站与 GitHub-backed CMS",
+  "scripts": {
+    "migrate:content": "python3 scripts/migrate_content.py",
+    "build": "npm run build:admin",
+    "build:admin": "npm --prefix apps/admin run build",
+    "typecheck:worker": "npm --prefix worker run typecheck"
+  }
+}
