@@ -312,6 +312,78 @@ async function upload(request: Request, env: Env): Promise<Response> {
   return json({ ok: true, path, url: `/${path}` }, 201);
 }
 
+type MessageRecord = {
+  id: string;
+  name: string;
+  email: string;
+  content: string;
+  created_at: string;
+  is_read?: boolean;
+};
+
+async function createMessage(request: Request, env: Env): Promise<Response> {
+  const body = await requestJson(request);
+  const name = typeof body.name === 'string' ? body.name.trim() : '';
+  const email = typeof body.email === 'string' ? body.email.trim() : '';
+  const content = typeof body.content === 'string' ? body.content.trim() : typeof body.message === 'string' ? body.message.trim() : '';
+
+  if (!name) throw new HttpError(400, '请输入您的姓名');
+  if (!email || !email.includes('@')) throw new HttpError(400, '请输入有效邮箱地址');
+  if (!content) throw new HttpError(400, '请输入留言内容');
+
+  const id = `${Date.now()}-${crypto.randomUUID().slice(0, 6)}`;
+  const record: MessageRecord = {
+    id,
+    name,
+    email,
+    content,
+    created_at: new Date().toISOString(),
+    is_read: false,
+  };
+
+  const path = `content/messages/${id}.json`;
+  await writeText(env, path, jsonText(record), `cms(message): new message from ${name}`);
+  return json({ ok: true, message: '留言提交成功', id }, 201);
+}
+
+async function messageList(env: Env): Promise<Response> {
+  const files = await listFiles(env, 'content/messages');
+  const messages = await Promise.all(
+    files.filter((f) => f.path.endsWith('.json')).map(async (f) => {
+      try {
+        const stored = await readFile(env, f.path);
+        const data = JSON.parse(stored.text) as MessageRecord;
+        return { ...data, sha: stored.sha };
+      } catch {
+        return null;
+      }
+    })
+  );
+  const valid = messages.filter((m): m is NonNullable<typeof m> => m !== null);
+  valid.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+  return json(valid);
+}
+
+async function markMessageRead(request: Request, env: Env, id: string): Promise<Response> {
+  const safeId = safeSegment(id, '留言 ID');
+  const path = `content/messages/${safeId}.json`;
+  const stored = await readFile(env, path);
+  const data = JSON.parse(stored.text) as MessageRecord;
+  const body = await requestJson(request);
+  const is_read = typeof body.is_read === 'boolean' ? body.is_read : true;
+  const updated: MessageRecord = { ...data, is_read };
+  await writeText(env, path, jsonText(updated), `cms(message): mark read ${safeId}`, stored.sha);
+  return json({ ok: true, id: safeId, is_read });
+}
+
+async function deleteMessage(env: Env, id: string): Promise<Response> {
+  const safeId = safeSegment(id, '留言 ID');
+  const path = `content/messages/${safeId}.json`;
+  const stored = await readFile(env, path);
+  await deleteFile(env, path, `cms(message): delete ${safeId}`, stored.sha);
+  return json({ ok: true, id: safeId });
+}
+
 function routePath(request: Request): string[] {
   const pathname = new URL(request.url).pathname.replace(/^\/api\/?/, '').replace(/\/+$/, '');
   return pathname ? pathname.split('/') : [];
@@ -321,9 +393,16 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: corsHeaders });
     try {
-      requireAdmin(request, env);
       const parts = routePath(request);
       const [resource, id] = parts;
+
+      // 公开接口：访客提交留言（无需 Admin 认证）
+      if (resource === 'messages' && parts.length === 1 && request.method === 'POST') {
+        return createMessage(request, env);
+      }
+
+      // 其余管理后台接口必须通过管理员认证
+      requireAdmin(request, env);
       if (request.method === 'GET' && resource === 'health' && parts.length === 1) {
         return json({ ok: true, repository: `${env.GITHUB_OWNER}/${env.GITHUB_REPO}`, branch: env.GITHUB_BRANCH });
       }
@@ -335,6 +414,9 @@ export default {
       if (resource === 'pages' && parts.length === 1 && request.method === 'GET') return pageList(env);
       if (resource === 'pages' && parts.length === 2 && request.method === 'GET') return pageDetail(env, id);
       if (resource === 'pages' && parts.length === 2 && request.method === 'PUT') return savePage(request, env, id);
+      if (resource === 'messages' && parts.length === 1 && request.method === 'GET') return messageList(env);
+      if (resource === 'messages' && parts.length === 2 && request.method === 'PUT') return markMessageRead(request, env, id);
+      if (resource === 'messages' && parts.length === 2 && request.method === 'DELETE') return deleteMessage(env, id);
       if (resource === 'articles' && parts.length === 1 && request.method === 'GET') return articleList(env);
       if (resource === 'articles' && parts.length === 2 && request.method === 'GET') return articleDetail(env, id);
       if (resource === 'articles' && parts.length === 1 && request.method === 'POST') return saveArticle(request, env);

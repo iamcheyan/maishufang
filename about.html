@@ -97,7 +97,7 @@
             <!-- 右侧：联系我们（表单 + 联系方式） -->
             <div class="product-info-section contact-form-section" id="contact-form">
                 <div class="product-description">
-                    <form method="post" action="https://maishufang.cn/contact">
+                    <form id="messageForm" method="post" action="/api/messages">
                         <div class="form-group">
                             <label class="form-label">姓名</label>
                             <input type="text" name="name" class="form-input" placeholder="请输入您的姓名" required>
@@ -221,8 +221,62 @@
             carousel.addEventListener('mouseenter', stopAutoplay);
             carousel.addEventListener('mouseleave', startAutoplay);
 
-            // 开始自动播放
-            startAutoplay();
+            // 留言表单提交处理
+            const messageForm = document.getElementById('messageForm');
+            if (messageForm) {
+                const submitBtn = messageForm.querySelector('button[type="submit"]');
+                messageForm.addEventListener('submit', async function(event) {
+                    event.preventDefault();
+                    const originalText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = '正在发送…';
+
+                    const formData = new FormData(messageForm);
+                    const payload = {
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        content: formData.get('message')
+                    };
+
+                    const candidates = [
+                        '/api/messages',
+                        'http://127.0.0.1:8787/api/messages',
+                        'http://localhost:8787/api/messages'
+                    ];
+
+                    let ok = false;
+                    let errorMsg = '';
+
+                    for (const endpoint of candidates) {
+                        try {
+                            const res = await fetch(endpoint, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                            if (res.ok) {
+                                ok = true;
+                                break;
+                            } else {
+                                const errData = await res.json().catch(() => ({}));
+                                errorMsg = errData.error || ('请求失败 (' + res.status + ')');
+                            }
+                        } catch (err) {
+                            // 继续尝试下一个候选地址
+                        }
+                    }
+
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+
+                    if (ok) {
+                        alert('留言提交成功！我们会尽快通过邮箱回复您。');
+                        messageForm.reset();
+                    } else {
+                        alert(errorMsg || '提交失败，请稍后重试。');
+                    }
+                });
+            }
         });
     </script>
 </body>

@@ -5,7 +5,7 @@
   "publisher": "北岳文艺出版社",
   "published_at": "2020年04月",
   "isbn": "国际标准书号9787537861120",
-  "cover": "../static/img/products/7f9c070a9.png",
+  "cover": "/static/img/products/7f9c070a9.png",
   "buy_url": "http://product.dangdang.com/28542897.html",
   "publication_year": "2020",
   "source": {

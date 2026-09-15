@@ -5,7 +5,7 @@
   "publisher": "江苏凤凰文艺出版社",
   "published_at": "2022年09月",
   "isbn": "国际标准书号9787559470928",
-  "cover": "../static/img/products/f30b70482.png",
+  "cover": "/static/img/products/f30b70482.png",
   "buy_url": "https://product.dangdang.com/29466552.html",
   "publication_year": "2022",
   "source": {

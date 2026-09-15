@@ -6,3 +6,4 @@ dist/
 *.tsbuildinfo
 goal.md
 .wrangler/
+.dev.vars

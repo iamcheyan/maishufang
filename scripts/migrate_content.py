@@ -152,7 +152,12 @@ def parse_product(path: Path) -> dict[str, Any]:
         if parser.details.get(source):
             fields[target] = parser.details[source]
     if parser.images:
-        fields["cover"] = parser.images[0]
+        cover_path = parser.images[0]
+        if cover_path.startswith("../"):
+            cover_path = cover_path[2:]
+        elif not cover_path.startswith("/"):
+            cover_path = "/" + cover_path
+        fields["cover"] = cover_path
     if parser.buy_url:
         fields["buy_url"] = parser.buy_url
     if parser.year:
