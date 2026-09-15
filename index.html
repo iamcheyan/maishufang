@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麦书房 - 精选好书</title>
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/main.css">
+    
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="main-nav">
+        <div class="nav-content">
+            <!-- Logo区域 -->
+            <div class="brand-section">
+                <a href="index.html">
+                    <img src="static/logo.png" alt="麦书房" class="brand-logo">
+                </a>
+                
+            </div>
+
+            <!-- 导航区域 -->
+            <div class="nav-section">
+                <ul class="nav-links">
+                    <li><a href="products.html" class="">图书</a></li>
+                    <li><a href="about.html" class="">关于</a></li>
+                </ul>
+
+                <form class="nav-search" action="products.html" method="get" role="search">
+                    <label class="visually-hidden" for="nav-search-input">搜索图书</label>
+                    <input id="nav-search-input" type="search" name="q" placeholder="搜索图书" value="" aria-label="搜索图书">
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        
+<!-- 轮播图区域 -->
+<div class="carousel-container">
+    <div class="carousel-wrapper">
+        <div class="carousel-slides" id="carouselSlides">
+            
+            <div class="carousel-slide active">
+                
+                
+                <img src="static/img/carousel/98364cde7.jpg" alt="我是刘慈欣（刘慈欣《流浪地球》幕后故事）" class="carousel-image">
+                
+                
+                <div class="carousel-content">
+                    
+                    <h2 class="carousel-title">我是刘慈欣（刘慈欣《流浪地球》幕后故事）</h2>
+                    
+                    
+                </div>
+                
+            </div>
+            
+            <div class="carousel-slide ">
+                
+                
+                <img src="static/img/carousel/21b36c8f3.jpg" alt="湘行散记（2018中国“最美的书”）" class="carousel-image">
+                
+                
+                <div class="carousel-content">
+                    
+                    <h2 class="carousel-title">湘行散记（2018中国“最美的书”）</h2>
+                    
+                    
+                </div>
+                
+            </div>
+            
+            <div class="carousel-slide ">
+                
+                
+                <img src="static/img/carousel/352d82953.jpg" alt="我是猫（全译本！一只猫的日常与哲学）" class="carousel-image">
+                
+                
+                <div class="carousel-content">
+                    
+                    <h2 class="carousel-title">我是猫（全译本！一只猫的日常与哲学）</h2>
+                    
+                    
+                </div>
+                
+            </div>
+            
+            <div class="carousel-slide ">
+                
+                
+                <img src="static/img/carousel/755f0e5a4.jpg" alt="人间失格（太宰治自传体小说）" class="carousel-image">
+                
+                
+                <div class="carousel-content">
+                    
+                    <h2 class="carousel-title">人间失格（太宰治自传体小说）</h2>
+                    
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- 轮播控制按钮 -->
+        
+        <button class="carousel-btn carousel-prev" onclick="changeSlide(-1)">‹</button>
+        <button class="carousel-btn carousel-next" onclick="changeSlide(1)">›</button>
+        
+        <!-- 轮播指示器 -->
+        <div class="carousel-indicators">
+            
+            <span class="carousel-indicator active" onclick="currentSlide(1)"></span>
+            
+            <span class="carousel-indicator " onclick="currentSlide(2)"></span>
+            
+            <span class="carousel-indicator " onclick="currentSlide(3)"></span>
+            
+            <span class="carousel-indicator " onclick="currentSlide(4)"></span>
+            
+        </div>
+        
+    </div>
+</div>
+
+<div class="bookshelf-container">
+
+    <!-- 书柜 -->
+    <div class="bookshelf">
+        <div class="shelf-theme-highlight">
+            文字是一粒种子，书是它开出的花。
+        </div>
+
+        
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2022年出版</h2>
+        <span class="bookshelf-year-count">共 10 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/29.html">平面国</a>
+    </h3>
+    
+    
+    <p class="book-author">[英国] 埃德温·A·艾勃特</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/29.html">
+        <img src="static/img/products/818a502be.png" alt="平面国" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/25.html">中国民间故事</a>
+    </h3>
+    
+    
+    <p class="book-author">刘守华</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/25.html">
+        <img src="static/img/products/ab61eec0a.png" alt="中国民间故事" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/26.html">伊索寓言</a>
+    </h3>
+    
+    
+    <p class="book-author">[希腊] 伊索</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/26.html">
+        <img src="static/img/products/5e91e28a7.png" alt="伊索寓言" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/20.html">孔子的故事</a>
+    </h3>
+    
+    
+    <p class="book-author">李长之</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/20.html">
+        <img src="static/img/products/38bf7a4a0.png" alt="孔子的故事" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+        </div>
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/8.html">山羊之歌：中原中也诗选（全新译本，精装珍藏）</a>
+    </h3>
+    
+    
+    <p class="book-author">（日）中原中也</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/8.html">
+        <img src="static/img/products/3fe2c6ab5.png" alt="山羊之歌：中原中也诗选（全新译本，精装珍藏）" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/7.html">身在浮世，心向清欢</a>
+    </h3>
+    
+    
+    <p class="book-author">子聿</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/7.html">
+        <img src="static/img/products/9afa1a739.png" alt="身在浮世，心向清欢" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/5.html">你心从容，自当优雅：杨绛传（完整展现杨绛105年曼妙的人生风景）</a>
+    </h3>
+    
+    
+    <p class="book-author">凉月满天</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/5.html">
+        <img src="static/img/products/fc397224f.png" alt="你心从容，自当优雅：杨绛传（完整展现杨绛105年曼妙的人生风景）" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/6.html">骑鹅旅行记：全译本（未删减版 快乐读书吧 六年级下册 中小学生课外阅读书 无障碍阅读 又译《尼尔斯骑鹅历险记》）</a>
+    </h3>
+    
+    
+    <p class="book-author">[瑞典]塞尔玛・拉格洛夫</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/6.html">
+        <img src="static/img/products/1ac85f370.png" alt="骑鹅旅行记：全译本（未删减版 快乐读书吧 六年级下册 中小学生课外阅读书 无障碍阅读 又译《尼尔斯骑鹅历险记》）" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+        </div>
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/4.html">一生欠安：增订本</a>
+    </h3>
+    
+    
+    <p class="book-author">李梦霁</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/4.html">
+        <img src="static/img/products/920a32350.png" alt="一生欠安：增订本" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/3.html">给教师的建议：全译本（教育答案之书！是教师手册，更是家长手册）</a>
+    </h3>
+    
+    
+    <p class="book-author">[苏]苏霍姆林斯基</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/3.html">
+        <img src="static/img/products/f30b70482.png" alt="给教师的建议：全译本（教育答案之书！是教师手册，更是家长手册）" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2021年出版</h2>
+        <span class="bookshelf-year-count">共 3 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/17.html">浮生六记</a>
+    </h3>
+    
+    
+    <p class="book-author">（清）沈复</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/17.html">
+        <img src="static/img/products/c9cf68aeb.png" alt="浮生六记" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/9.html">童年</a>
+    </h3>
+    
+    
+    <p class="book-author">（苏）高尔基</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/9.html">
+        <img src="static/img/products/47413e0cb.png" alt="童年" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/2.html">逃家小兔</a>
+    </h3>
+    
+    
+    <p class="book-author">[美] 玛格丽特·怀兹·布朗</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/2.html">
+        <img src="static/img/products/fd869cbf7.png" alt="逃家小兔" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2020年出版</h2>
+        <span class="bookshelf-year-count">共 6 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/23.html">斜阳</a>
+    </h3>
+    
+    
+    <p class="book-author">太宰治</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/23.html">
+        <img src="static/img/products/7f3e6654a.png" alt="斜阳" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/22.html">山月记</a>
+    </h3>
+    
+    
+    <p class="book-author">[日] 中岛敦</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/22.html">
+        <img src="static/img/products/c4144b8da.png" alt="山月记" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/21.html">小灵通漫游未来</a>
+    </h3>
+    
+    
+    <p class="book-author">叶永烈</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/21.html">
+        <img src="static/img/products/0e8fce880.png" alt="小灵通漫游未来" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/16.html">乌合之众：大众心理研究</a>
+    </h3>
+    
+    
+    <p class="book-author">[法国] 古斯塔夫·勒庞</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/16.html">
+        <img src="static/img/products/84242384b.png" alt="乌合之众：大众心理研究" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+        </div>
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/13.html">汪曾祺生活三书</a>
+    </h3>
+    
+    
+    <p class="book-author">汪曾祺</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/13.html">
+        <img src="static/img/products/7f9c070a9.png" alt="汪曾祺生活三书" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/14.html">晚年钱锺书</a>
+    </h3>
+    
+    
+    <p class="book-author">钱之俊</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/14.html">
+        <img src="static/img/products/da2c423c3.png" alt="晚年钱锺书" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2019年出版</h2>
+        <span class="bookshelf-year-count">共 2 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/15.html">局外人</a>
+    </h3>
+    
+    
+    <p class="book-author">[法] 阿尔贝·加缪</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/15.html">
+        <img src="static/img/products/51182994e.png" alt="局外人" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/10.html">小英雄雨来</a>
+    </h3>
+    
+    
+    <p class="book-author">管桦 / 朱超群 / 林林伊</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/10.html">
+        <img src="static/img/products/847aaba9d.png" alt="小英雄雨来" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2018年出版</h2>
+        <span class="bookshelf-year-count">共 1 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/11.html">曾国藩传</a>
+    </h3>
+    
+    
+    <p class="book-author">梅寒</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/11.html">
+        <img src="static/img/products/31746286a.png" alt="曾国藩传" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2017年出版</h2>
+        <span class="bookshelf-year-count">共 3 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/18.html">傅雷家书</a>
+    </h3>
+    
+    
+    <p class="book-author">傅雷</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/18.html">
+        <img src="static/img/products/4a3cdcf79.png" alt="傅雷家书" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/12.html">森林报</a>
+    </h3>
+    
+    
+    <p class="book-author">[苏]维·比安基</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/12.html">
+        <img src="static/img/products/0d5075428.png" alt="森林报" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/1.html">The Little Prince</a>
+    </h3>
+    
+    
+    <p class="book-author">[法]安托万·德·圣埃克苏佩里Antoine de Saint-Exupéry</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/1.html">
+        <img src="static/img/products/20a29438b.png" alt="The Little Prince" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+<section class="bookshelf-year-section">
+    <header class="bookshelf-year-header">
+        <h2 class="bookshelf-title">2016年出版</h2>
+        <span class="bookshelf-year-count">共 2 本</span>
+    </header>
+
+    <div class="books-grid-wrapper">
+    <div class="books-grid">
+        
+        <div class="book-row">
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/24.html">中国神话传说</a>
+    </h3>
+    
+    
+    <p class="book-author">袁珂</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/24.html">
+        <img src="static/img/products/c8221132a.png" alt="中国神话传说" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+            <!-- 公用的图书卡片组件 -->
+<div class="book-card">
+    <h3 class="book-title">
+        <a href="products/19.html">班长下台</a>
+    </h3>
+    
+    
+    <p class="book-author">桂文亚</p>
+    
+    
+    
+    
+    
+    
+    <a href="products/19.html">
+        <img src="static/img/products/26910196f.png" alt="班长下台" class="book-image">
+    </a>
+    
+    
+   
+</div>
+            
+
+            
+            
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+                <div class="book-card" style="visibility: hidden;"></div>
+                
+            
+        </div>
+        
+    </div>
+    </div>
+</section>
+
+
+
+    </div>
+
+    <!-- 显示全部图书 -->
+    <div class="text-center mt-5">
+        <a href="products.html" class="show-all-btn">显示全部</a>
+    </div>
+</div>
+
+<script>
+// 轮播图功能
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.carousel-indicator');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    // 隐藏所有幻灯片
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // 显示当前幻灯片
+    if (slides[index]) {
+        slides[index].classList.add('active');
+    }
+    if (indicators[index]) {
+        indicators[index].classList.add('active');
+    }
+}
+
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    
+    // 循环播放
+    if (currentSlideIndex >= totalSlides) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = totalSlides - 1;
+    }
+    
+    showSlide(currentSlideIndex);
+}
+
+function currentSlide(index) {
+    currentSlideIndex = index - 1;
+    showSlide(currentSlideIndex);
+}
+
+// 自动播放
+let autoPlayInterval;
+
+function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+        if (totalSlides > 1) {
+            changeSlide(1);
+        }
+    }, 5000); // 5秒切换一次
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// 页面加载完成后启动自动播放
+document.addEventListener('DOMContentLoaded', function() {
+    if (totalSlides > 1) {
+        startAutoPlay();
+        
+        // 鼠标悬停时暂停自动播放
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        if (carouselWrapper) {
+            carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+            carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // 触摸滑动切换（移动端手势）
+        const track = document.getElementById('carouselSlides');
+        let touchStartX = 0;
+        let touchDeltaX = 0;
+        if (track) {
+            track.addEventListener('touchstart', (e) => {
+                if (!e.touches || e.touches.length === 0) return;
+                touchStartX = e.touches[0].clientX;
+                touchDeltaX = 0;
+                stopAutoPlay();
+            }, { passive: true });
+
+            track.addEventListener('touchmove', (e) => {
+                if (!e.touches || e.touches.length === 0) return;
+                touchDeltaX = e.touches[0].clientX - touchStartX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', () => {
+                const threshold = 40; // 滑动阈值
+                if (Math.abs(touchDeltaX) > threshold) {
+                    if (touchDeltaX < 0) {
+                        changeSlide(1); // 左滑，下一张
+                    } else {
+                        changeSlide(-1); // 右滑，上一张
+                    }
+                }
+                startAutoPlay();
+            });
+        }
+    }
+});
+</script>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class=" icp">
+                Copyright © 2016 - 2026 合肥麦书房文化有限公司 <br>
+                   <a href="http://www.beian.miit.gov.cn/" target="_blank">皖ICP备19020836号-1</a>
+                   <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019202000729"><img src="http://maishufang.cn/template//public/maishufang/images/hefei.png"></a> <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34019202000729"><span>皖公安网备34019202000729号 </span></a>		 </div>
+        </div>
+    </footer>
+
+    <!-- 消息提示 -->
+    
+    
+    
+
+    <script>
+        // 消息提示动画
+        (() => {
+            const flashMessages = document.querySelector('.flash-messages');
+            if (!flashMessages) return;
+            
+            flashMessages.querySelectorAll('.flash').forEach((flash, index) => {
+                setTimeout(() => {
+                    flash.classList.add('show');
+                }, index * 100);
+                
+                setTimeout(() => {
+                    flash.classList.remove('show');
+                    setTimeout(() => flash.remove(), 300);
+                }, 4000 + index * 100);
+            });
+        })();
+
+        // 轮播图功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            if (!carousel) return;
+
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const prevBtn = carousel.querySelector('.carousel-prev');
+            const nextBtn = carousel.querySelector('.carousel-next');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+
+            let currentSlide = 0;
+            let autoplayInterval;
+
+            function showSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // 事件监听
+            prevBtn?.addEventListener('click', () => {
+                showSlide(currentSlide - 1);
+                stopAutoplay();
+                setTimeout(startAutoplay, 2000);
+            });
+
+            nextBtn?.addEventListener('click', () => {
+                showSlide(currentSlide + 1);
+                stopAutoplay();
+                setTimeout(startAutoplay, 2000);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showSlide(index);
+                    stopAutoplay();
+                    setTimeout(startAutoplay, 2000);
+                });
+            });
+
+            // 鼠标悬停控制
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            // 开始自动播放
+            startAutoplay();
+        });
+    </script>
+</body>
+</html>
