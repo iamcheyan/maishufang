@@ -1,0 +1,16 @@
+{
+  "id": "9",
+  "title": "童年",
+  "author": "（苏）高尔基",
+  "publisher": "台海出版社",
+  "published_at": "2021年09月",
+  "isbn": "9787516830345",
+  "cover": "../static/img/products/47413e0cb.png",
+  "buy_url": "http://product.dangdang.com/29306809.html",
+  "publication_year": "2021",
+  "description": "本书是高尔基自传体小说三部曲中的第一部。\n描写阿廖沙即作者在外祖父家的生活。\n它以严谨的现实主义手法，极其生动的描绘了作者童年的艰难和俄国小市民阶层的人情世态，刻画了一系列普通人物的鲜明形象。\n尤其是外祖母的形象令人难忘，她已经成了俄罗斯文学最光辉、最有诗意的妇女形象。",
+  "source": {
+    "path": "products/9.html",
+    "sha256": "e166a2806a41f3cb7c2725f793cc5fda18a5e8f86b7bf9138a109b1aa7f967c9"
+  }
+}

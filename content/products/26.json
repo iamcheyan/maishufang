@@ -1,0 +1,16 @@
+{
+  "id": "26",
+  "title": "伊索寓言",
+  "author": "[希腊] 伊索",
+  "publisher": "北岳文艺出版社",
+  "published_at": "2022-2",
+  "isbn": "9787537834544",
+  "cover": "../static/img/products/5e91e28a7.png",
+  "buy_url": "http://product.dangdang.com/29259656.html",
+  "publication_year": "2022",
+  "description": "古希腊寓言的汇编，相传为伊索所作。《伊索寓言》主要反映下层平民和奴隶的思想感情，总结他们丰富的斗争经验和生活教训。它是欧洲最早的寓言集，在欧洲文学史上奠定了寓言创作的基础。后代作家经常引用它，或作为重新创作的题材，或作为抨击暴政、讽刺敌人的武器。",
+  "source": {
+    "path": "products/26.html",
+    "sha256": "69b949a7aaff34e9a9fc8551fb82735f78bddd19b22de9489df1463ea425eef6"
+  }
+}

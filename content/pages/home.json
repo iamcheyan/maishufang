@@ -1,0 +1,27 @@
+{
+  "slug": "home",
+  "title": "麦书房 - 精选好书",
+  "theme_line": "文字是一粒种子，书是它开出的花。",
+  "carousel": [
+    {
+      "image": "static/img/carousel/98364cde7.jpg",
+      "title": "我是刘慈欣（刘慈欣《流浪地球》幕后故事）"
+    },
+    {
+      "image": "static/img/carousel/21b36c8f3.jpg",
+      "title": "湘行散记（2018中国“最美的书”）"
+    },
+    {
+      "image": "static/img/carousel/352d82953.jpg",
+      "title": "我是猫（全译本！一只猫的日常与哲学）"
+    },
+    {
+      "image": "static/img/carousel/755f0e5a4.jpg",
+      "title": "人间失格（太宰治自传体小说）"
+    }
+  ],
+  "source": {
+    "path": "index.html",
+    "sha256": "59db4a96265f88488d46bbe2251523920ca1feb07a6e9eff4e5a768b8b4b3726"
+  }
+}
