@@ -113,11 +113,11 @@ function RichEditor({ value, onChange }: { value: string; onChange: (value: stri
   );
 }
 
-function Field({ label, value, onChange, multiline = false }: { label: string; value: string; onChange: (value: string) => void; multiline?: boolean }) {
+function Field({ label, value, onChange, multiline = false, disabled = false }: { label: string; value: string; onChange: (value: string) => void; multiline?: boolean; disabled?: boolean }) {
   return (
     <label className="field">
       <span>{label}</span>
-      {multiline ? <textarea value={value} onChange={(event) => onChange(event.target.value)} /> : <input value={value} onChange={(event) => onChange(event.target.value)} />}
+      {multiline ? <textarea disabled={disabled} value={value} onChange={(event) => onChange(event.target.value)} /> : <input disabled={disabled} value={value} onChange={(event) => onChange(event.target.value)} />}
     </label>
   );
 }
@@ -183,7 +183,7 @@ function ArticleModal({ article, isNew, busy, onChange, onSave, onDelete, onClos
         <div className="form">
           <Field label="标题" value={article.title} onChange={(value) => update('title', value)} />
           <div className="form-grid">
-            <Field label="Slug" value={article.slug} onChange={(value) => update('slug', value)} />
+            <Field label="Slug" value={article.slug} onChange={(value) => update('slug', value)} disabled={!isNew} />
             <Field label="状态（draft / published）" value={article.status || 'draft'} onChange={(value) => update('status', value)} />
             <Field label="作者" value={article.author || ''} onChange={(value) => update('author', value)} />
             <Field label="发布日期" value={article.published_at || ''} onChange={(value) => update('published_at', value)} />
