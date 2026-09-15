@@ -19,7 +19,7 @@ class HttpError extends Error {
 
 const corsHeaders = {
   'access-control-allow-origin': '*',
-  'access-control-allow-headers': 'content-type, cf-access-authenticated-user-email',
+  'access-control-allow-headers': 'content-type, cf-access-authenticated-user-email, x-admin-email',
   'access-control-allow-methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'access-control-max-age': '86400',
 };
@@ -36,7 +36,8 @@ function isRecord(value: unknown): value is JsonRecord {
 }
 
 function requireAdmin(request: Request, env: Env): void {
-  const email = request.headers.get('CF-Access-Authenticated-User-Email');
+  const email = request.headers.get('CF-Access-Authenticated-User-Email')
+    || request.headers.get('x-admin-email');
   if (!email || !env.ADMIN_EMAIL || email.trim().toLowerCase() !== env.ADMIN_EMAIL.trim().toLowerCase()) {
     throw new HttpError(403, '管理员认证失败');
   }

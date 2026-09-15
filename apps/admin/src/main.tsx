@@ -67,8 +67,13 @@ function formatCoverUrl(url?: string): string {
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const headers = new Headers(init?.headers);
   const adminEmail = localStorage.getItem('admin_email') || (import.meta.env.VITE_ADMIN_EMAIL as string | undefined) || 'tetsuya.ueno@outlook.com';
-  if (adminEmail && !headers.has('cf-access-authenticated-user-email')) {
-    headers.set('cf-access-authenticated-user-email', adminEmail);
+  if (adminEmail) {
+    if (!headers.has('cf-access-authenticated-user-email')) {
+      headers.set('cf-access-authenticated-user-email', adminEmail);
+    }
+    if (!headers.has('x-admin-email')) {
+      headers.set('x-admin-email', adminEmail);
+    }
   }
   const response = await fetch(`${API}/${path}`, { ...init, headers });
   const contentType = response.headers.get('content-type') || '';

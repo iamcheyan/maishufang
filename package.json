@@ -7,6 +7,11 @@
     "migrate:content": "python3 scripts/migrate_content.py",
     "build": "npm run build:admin",
     "build:admin": "npm --prefix apps/admin run build",
-    "typecheck:worker": "npm --prefix worker run typecheck"
+    "typecheck:worker": "npm --prefix worker run typecheck",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.131.2"
   }
 }
