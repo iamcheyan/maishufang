@@ -1,0 +1,12 @@
+name = "maishufang-cms-api"
+main = "src/index.ts"
+compatibility_date = "2026-09-15"
+
+[vars]
+GITHUB_OWNER = "iamcheyan"
+GITHUB_REPO = "maishufang"
+GITHUB_BRANCH = "main"
+# Set ADMIN_EMAIL with `wrangler secret put ADMIN_EMAIL`.
+
+[observability]
+enabled = true
