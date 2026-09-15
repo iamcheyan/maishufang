@@ -1,0 +1,9 @@
+{
+  "name": "maishufang-admin",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {"dev":"vite", "build":"tsc -b && vite build", "typecheck":"tsc --noEmit"},
+  "dependencies": {"@tiptap/extension-image":"latest", "@tiptap/extension-link":"latest", "@tiptap/extension-placeholder":"latest", "@tiptap/extension-table":"latest", "@tiptap/extension-table-cell":"latest", "@tiptap/extension-table-header":"latest", "@tiptap/extension-table-row":"latest", "@tiptap/react":"latest", "@tiptap/starter-kit":"latest", "react":"latest", "react-dom":"latest"},
+  "devDependencies": {"@types/react":"latest", "@types/react-dom":"latest", "@vitejs/plugin-react":"latest", "typescript":"latest", "vite":"latest"}
+}
