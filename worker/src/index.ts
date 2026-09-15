@@ -38,7 +38,9 @@ function isRecord(value: unknown): value is JsonRecord {
 function requireAdmin(request: Request, env: Env): void {
   const email = request.headers.get('CF-Access-Authenticated-User-Email')
     || request.headers.get('x-admin-email');
-  if (!email || !env.ADMIN_EMAIL || email.trim().toLowerCase() !== env.ADMIN_EMAIL.trim().toLowerCase()) {
+  if (!email || !env.ADMIN_EMAIL) throw new HttpError(403, '管理员认证失败');
+  const allowed = env.ADMIN_EMAIL.split(',').map((e) => e.trim().toLowerCase());
+  if (!allowed.includes(email.trim().toLowerCase())) {
     throw new HttpError(403, '管理员认证失败');
   }
 }
